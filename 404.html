@@ -3,13 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas Denny</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>404 — Thomas Denny</title>
+  <meta name="robots" content="noindex" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    (function () {
-      try { sessionStorage.setItem('redirect', location.pathname + location.search + location.hash); } catch (e) {}
-      location.replace('/');
-    })();
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { cream: '#F5F0E8', rust: '#B94A2C', mustard: '#D4A017', navy: '#1B2A4A', parchment: '#E8DFC8', charcoal: '#2E2E2E' },
+          fontFamily: { display: ['"Playfair Display"', 'Georgia', 'serif'], body: ['Lora', 'Georgia', 'serif'], mono: ['"Courier Prime"', 'Courier New', 'monospace'] },
+        },
+      },
+    }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
-<body></body>
+<body class="font-body text-charcoal min-h-screen flex flex-col">
+
+  <!-- NAV -->
+  <nav class="bg-navy sticky top-0 z-50 border-b-4 border-mustard">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
+      <a href="/" class="font-display font-black text-cream text-xl tracking-tight leading-none shrink-0 no-underline">
+        THOMAS<br /><span class="text-mustard">DENNY</span>
+      </a>
+      <div class="flex flex-wrap gap-0 items-center">
+        <a href="/#work" class="nav-link">Work</a>
+        <a href="/#built" class="nav-link">Built</a>
+        <a href="/#now" class="nav-link">Now</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+        <a href="/Thomas_Denny_Resume.pdf" class="nav-link" download>Resume ↓</a>
+        <a href="https://sharedintelligence.co" class="nav-link" target="_blank" rel="noopener">Shared Intelligence ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 404 BODY -->
+  <div class="flex-1 flex items-center justify-center px-4 py-20">
+    <div class="text-center max-w-xl">
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <div class="h-px bg-navy flex-1 max-w-16"></div>
+        <span class="font-mono text-rust text-xs tracking-widest uppercase">Error</span>
+        <div class="h-px bg-navy flex-1 max-w-16"></div>
+      </div>
+
+      <h1 class="font-display font-black text-navy leading-none mb-6" style="font-size: clamp(5rem, 18vw, 12rem); letter-spacing: -0.04em;">
+        4<span class="text-mustard italic">0</span>4
+      </h1>
+
+      <div class="retro-divider-double max-w-xs mx-auto my-8"></div>
+
+      <p class="font-display font-bold text-navy text-xl mb-4 tracking-wide uppercase" style="letter-spacing: 0.08em;">
+        Page Not Found
+      </p>
+
+      <p class="font-body text-charcoal text-lg leading-relaxed mb-10">
+        Nothing at this URL. Either the link was wrong or this page never existed. Head back to the homepage for the rest of the site.
+      </p>
+
+      <a href="/" class="cta-btn-primary">← Back to homepage</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy border-t-4 border-mustard mt-8">
+    <div class="max-w-5xl mx-auto px-4 py-8 text-center">
+      <p class="font-display font-bold text-cream text-lg mb-1">Thomas <span class="text-mustard">Denny</span></p>
+      <p class="font-mono text-xs text-cream/50 uppercase tracking-widest">Operations &amp; AI · Austin, Texas</p>
+      <div class="retro-divider-double max-w-xs mx-auto mt-4 mb-4" style="border-color: rgba(245,240,232,0.2);"></div>
+      <p class="font-mono text-xs text-cream/40">Also building <a href="https://sharedintelligence.co" target="_blank" rel="noopener" class="text-mustard hover:text-cream">Shared Intelligence ↗</a></p>
+    </div>
+  </footer>
+
+</body>
 </html>
