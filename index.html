@@ -30,14 +30,14 @@
   <!-- NAV -->
   <nav class="bg-navy sticky top-0 z-50 border-b-4 border-mustard">
     <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
-      <a href="#top" class="font-display font-black text-cream text-xl tracking-tight leading-none shrink-0 no-underline">
+      <a href="/" class="font-display font-black text-cream text-xl tracking-tight leading-none shrink-0 no-underline">
         THOMAS<br /><span class="text-mustard">DENNY</span>
       </a>
       <div class="flex flex-wrap gap-0 items-center">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#built" class="nav-link">Built</a>
-        <a href="#now" class="nav-link">Now</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="/work" class="nav-link">Work</a>
+        <a href="/built" class="nav-link">Built</a>
+        <a href="/now" class="nav-link">Now</a>
+        <a href="/contact" class="nav-link">Contact</a>
         <a href="/Thomas_Denny_Resume.pdf" class="nav-link" download>Resume ↓</a>
         <a href="https://sharedintelligence.co" class="nav-link" target="_blank" rel="noopener">Shared Intelligence ↗</a>
       </div>
@@ -79,7 +79,7 @@
 
         <div class="flex flex-wrap gap-4 justify-center md:justify-start">
           <a href="/Thomas_Denny_Resume.pdf" class="cta-btn-primary" download>Download resume (PDF)</a>
-          <a href="#work" class="cta-btn-secondary">See the work</a>
+          <a href="/work" class="cta-btn-secondary">See the work</a>
         </div>
       </div>
     </div>
@@ -261,6 +261,63 @@
       <p class="font-mono text-xs text-cream/40">Also building <a href="https://sharedintelligence.co" target="_blank" rel="noopener" class="text-mustard hover:text-cream">Shared Intelligence ↗</a></p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var sectionIds = ['work', 'built', 'now', 'contact'];
+
+      function pathToId(pathname) {
+        var slug = pathname.replace(/^\/+|\/+$/g, '');
+        return sectionIds.indexOf(slug) !== -1 ? slug : null;
+      }
+
+      function scrollToId(id, smooth) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.scrollIntoView(smooth ? { behavior: 'smooth' } : undefined);
+      }
+
+      // Restore path captured by 404.html
+      var redirect = sessionStorage.getItem('redirect');
+      if (redirect && redirect !== location.pathname) {
+        sessionStorage.removeItem('redirect');
+        history.replaceState(null, '', redirect);
+      } else if (redirect) {
+        sessionStorage.removeItem('redirect');
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var id = pathToId(location.pathname);
+        if (id) scrollToId(id, false);
+      });
+
+      document.addEventListener('click', function (e) {
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        var a = e.target.closest && e.target.closest('a');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href) return;
+        if (a.target && a.target !== '' && a.target !== '_self') return;
+        if (a.hasAttribute('download')) return;
+
+        if (href === '/' || (href.charAt(0) === '/' && sectionIds.indexOf(href.slice(1)) !== -1)) {
+          e.preventDefault();
+          if (location.pathname !== href) history.pushState(null, '', href);
+          if (href === '/') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            scrollToId(href.slice(1), true);
+          }
+        }
+      });
+
+      window.addEventListener('popstate', function () {
+        var id = pathToId(location.pathname);
+        if (id) scrollToId(id, false);
+        else window.scrollTo(0, 0);
+      });
+    })();
+  </script>
 
 </body>
 </html>
