@@ -1151,6 +1151,13 @@ body {
 .nav-overlay-meta strong { color: var(--ink); font-weight: 500; }
 
 body.nav-open { overflow: hidden; }
+body.nav-open .masthead {
+  z-index: 100;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+}
 
 @media (max-width: 700px) {
   .nav-links { display: none; }
