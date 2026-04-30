@@ -51,10 +51,11 @@ body {
     radial-gradient(900px 500px at -10% 100%, rgba(90, 30, 46, 0.06), transparent 55%),
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/></svg>");
   background-attachment: fixed, fixed, fixed;
-  cursor: none;
 }
 
-@media (max-width: 900px) { body { cursor: auto; } }
+@media (hover: hover) and (pointer: fine) {
+  body { cursor: none; }
+}
 
 ::selection { background: var(--ink); color: var(--ivory); }
 
@@ -69,6 +70,10 @@ body {
               height 0.25s var(--ease-out), opacity 0.25s var(--ease-out),
               background 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
   mix-blend-mode: multiply;
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot, .cursor-ring { display: block; }
 }
 .cursor-dot {
   width: 6px; height: 6px;
@@ -88,7 +93,6 @@ body {
   background: rgba(138, 110, 54, 0.05);
 }
 .cursor-dot.is-hover { background: var(--oxblood); }
-@media (max-width: 900px) { .cursor-dot, .cursor-ring { display: none; } }
 
 /* --------------------------------------------------------- Scroll progress */
 .scroll-progress {

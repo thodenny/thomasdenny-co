@@ -4,7 +4,7 @@
 
 // Custom cursor (dot + ring with hover affordance)
 (function () {
-  if (window.matchMedia('(max-width: 900px)').matches) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('PointerEvent' in window)) return;
 
