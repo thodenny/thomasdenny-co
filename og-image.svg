@@ -1,54 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <!-- Navy background -->
-  <rect width="1200" height="630" fill="#1B2A4A"/>
-
-  <!-- Subtle noise texture overlay (low opacity) -->
   <defs>
-    <filter id="n">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
-      <feColorMatrix type="saturate" values="0"/>
-    </filter>
+    <radialGradient id="warmth" cx="78%" cy="-10%" r="80%">
+      <stop offset="0%" stop-color="#B89055" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#B89055" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx="-5%" cy="115%" r="75%">
+      <stop offset="0%" stop-color="#5A1E2E" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#5A1E2E" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="1200" height="630" filter="url(#n)" opacity="0.06"/>
 
-  <!-- Mustard top stripe -->
-  <rect x="0" y="0" width="1200" height="14" fill="#D4A017"/>
-  <!-- Mustard bottom stripe -->
-  <rect x="0" y="616" width="1200" height="14" fill="#D4A017"/>
+  <!-- Ink ground with atmospheric washes -->
+  <rect width="1200" height="630" fill="#14171F"/>
+  <rect width="1200" height="630" fill="url(#warmth)"/>
+  <rect width="1200" height="630" fill="url(#cool)"/>
 
-  <!-- Cream inner border lines -->
-  <rect x="60" y="50" width="1080" height="2" fill="#F5F0E8" opacity="0.25"/>
-  <rect x="60" y="578" width="1080" height="2" fill="#F5F0E8" opacity="0.25"/>
+  <!-- Hairline brass frame -->
+  <rect x="44" y="44" width="1112" height="542" fill="none" stroke="#B89055" stroke-width="1" opacity="0.4"/>
 
-  <!-- Top label: AUSTIN, TEXAS -->
-  <text x="600" y="115" text-anchor="middle"
-    font-family="'Courier New', monospace" font-weight="700" font-size="20"
-    letter-spacing="6" fill="#B94A2C">— AUSTIN · TEXAS —</text>
+  <!-- Top kicker with side rules -->
+  <line x1="430" y1="125" x2="495" y2="125" stroke="#B89055" stroke-width="1"/>
+  <text x="600" y="131" text-anchor="middle"
+        font-family="Menlo, 'JetBrains Mono', monospace"
+        font-size="17" font-weight="500" fill="#B89055"
+        letter-spacing="7">OPERATOR · BUILDER</text>
+  <line x1="705" y1="125" x2="770" y2="125" stroke="#B89055" stroke-width="1"/>
 
-  <!-- Main wordmark: THOMAS / DENNY -->
-  <text x="600" y="265" text-anchor="middle"
-    font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="120"
-    letter-spacing="-3" fill="#F5F0E8">THOMAS</text>
-  <text x="600" y="385" text-anchor="middle"
-    font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-style="italic" font-size="120"
-    letter-spacing="-3" fill="#D4A017">DENNY</text>
+  <!-- Wordmark stacked: Thomas (ivory) / Denny (brass) -->
+  <text x="600" y="295" text-anchor="middle"
+        font-family="'Bodoni 72', 'Didot', 'Hoefler Text', Georgia, serif"
+        font-size="148" font-weight="500" fill="#ECE6DA"
+        letter-spacing="-2">Thomas</text>
+  <text x="600" y="430" text-anchor="middle"
+        font-family="'Bodoni 72', 'Didot', 'Hoefler Text', Georgia, serif"
+        font-size="148" font-weight="500" fill="#B89055"
+        letter-spacing="-2">Denny</text>
 
-  <!-- Decorative double rule -->
-  <rect x="450" y="425" width="300" height="2" fill="#F5F0E8" opacity="0.4"/>
-  <rect x="450" y="433" width="300" height="2" fill="#F5F0E8" opacity="0.4"/>
+  <!-- Short brass rule -->
+  <line x1="540" y1="468" x2="660" y2="468" stroke="#B89055" stroke-width="1" opacity="0.7"/>
 
-  <!-- Tagline -->
-  <text x="600" y="490" text-anchor="middle"
-    font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="34"
-    letter-spacing="3" fill="#F5F0E8">OPERATIONS &amp; AI · PROGRAM MANAGER AT META</text>
+  <!-- Tagline in italic serif -->
+  <text x="600" y="513" text-anchor="middle"
+        font-family="'Bodoni 72', 'Didot', 'Hoefler Text', Georgia, serif"
+        font-size="26" font-style="italic" fill="#ECE6DA" opacity="0.88">Operations &amp; AI · Program Manager at Meta</text>
 
-  <!-- Sub-tagline -->
-  <text x="600" y="545" text-anchor="middle"
-    font-family="Georgia, 'Times New Roman', serif" font-weight="400" font-style="italic" font-size="24"
-    fill="#F5F0E8" opacity="0.75">Ten years across Amazon, Tesla, and Meta.</text>
-
-  <!-- URL footer -->
-  <text x="600" y="600" text-anchor="middle"
-    font-family="'Courier New', monospace" font-weight="700" font-size="18"
-    letter-spacing="4" fill="#D4A017">thomasdenny.co</text>
+  <!-- Bottom rail -->
+  <line x1="80" y1="555" x2="1120" y2="555" stroke="#B89055" stroke-width="1" opacity="0.28"/>
+  <text x="80" y="588"
+        font-family="Menlo, 'JetBrains Mono', monospace"
+        font-size="14" fill="#B89055"
+        letter-spacing="4">AUSTIN · TEXAS</text>
+  <text x="1120" y="588" text-anchor="end"
+        font-family="Menlo, 'JetBrains Mono', monospace"
+        font-size="14" fill="#B89055"
+        letter-spacing="4">thomasdenny.co</text>
 </svg>
