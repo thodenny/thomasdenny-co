@@ -1,6 +1,81 @@
-// Fade-in on scroll for elements marked .fade-in
+/* ============================================================
+   Premium Editorial — interactions
+   ============================================================ */
+
+// Custom cursor (dot + ring with hover affordance)
 (function () {
-  const els = document.querySelectorAll('.fade-in');
+  if (window.matchMedia('(max-width: 900px)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('PointerEvent' in window)) return;
+
+  const dot = document.querySelector('.cursor-dot');
+  const ring = document.querySelector('.cursor-ring');
+  if (!dot || !ring) return;
+
+  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+  let rx = mx, ry = my;
+  let visible = false;
+
+  window.addEventListener('pointermove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    if (!visible) {
+      visible = true;
+      dot.style.opacity = 1;
+      ring.style.opacity = 0.45;
+    }
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+  }, { passive: true });
+
+  window.addEventListener('pointerleave', () => {
+    visible = false;
+    dot.style.opacity = 0;
+    ring.style.opacity = 0;
+  });
+
+  function loop() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  const hoverSelector = 'a, button, .card, .work, .plate, [role="button"], input, textarea, select';
+  document.addEventListener('pointerover', (e) => {
+    if (e.target.closest && e.target.closest(hoverSelector)) {
+      ring.classList.add('is-hover');
+      dot.classList.add('is-hover');
+    }
+  });
+  document.addEventListener('pointerout', (e) => {
+    if (e.target.closest && e.target.closest(hoverSelector)) {
+      ring.classList.remove('is-hover');
+      dot.classList.remove('is-hover');
+    }
+  });
+})();
+
+// Scroll progress bar
+(function () {
+  const bar = document.getElementById('scrollProgress');
+  if (!bar) return;
+  let ticking = false;
+  function update() {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    const p = max > 0 ? h.scrollTop / max : 0;
+    bar.style.transform = `scaleX(${p})`;
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();
+
+// Reveal-on-scroll
+(function () {
+  const els = document.querySelectorAll('.reveal');
   if (!els.length) return;
   if (!('IntersectionObserver' in window)) {
     els.forEach(el => el.classList.add('is-visible'));
@@ -13,11 +88,11 @@
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   els.forEach(el => obs.observe(el));
 })();
 
-// Active nav indicator: highlight the nav link for whichever section is centered in the viewport
+// Active nav indicator
 (function () {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
@@ -41,4 +116,22 @@
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
   sections.forEach(s => { if (linkById[s.id]) obs.observe(s); });
+})();
+
+// Subtle parallax on the hero plate
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const plate = document.querySelector('.plate');
+  if (!plate) return;
+  let target = 0, current = 0;
+  function onScroll() {
+    target = Math.max(-30, Math.min(30, window.scrollY * -0.04));
+  }
+  function loop() {
+    current += (target - current) * 0.08;
+    plate.style.translate = `0 ${current}px`;
+    requestAnimationFrame(loop);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  loop();
 })();

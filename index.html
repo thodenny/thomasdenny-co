@@ -11,7 +11,7 @@
   <meta name="description" content="Program Manager at Meta. Ten years building and scaling operations at Amazon, Tesla, and Meta. Currently working on AI infrastructure operations and adoption." />
   <meta name="author" content="Thomas Denny" />
 
-  <!-- Open Graph / Facebook / LinkedIn / Slack -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thomasdenny.co/" />
   <meta property="og:title" content="Thomas Denny — Operations & AI" />
@@ -21,13 +21,11 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Thomas Denny" />
 
-  <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Thomas Denny — Operations & AI" />
   <meta name="twitter:description" content="An operator who taught himself to build with AI. Ten years across Amazon, Tesla, and Meta." />
   <meta name="twitter:image" content="https://thomasdenny.co/og-image.jpg" />
 
-  <!-- JSON-LD Person schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,275 +35,318 @@
     "worksFor": { "@type": "Organization", "name": "Meta" },
     "url": "https://thomasdenny.co",
     "image": "https://thomasdenny.co/headshot.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Austin",
-      "addressRegion": "TX",
-      "addressCountry": "US"
-    },
+    "address": { "@type": "PostalAddress", "addressLocality": "Austin", "addressRegion": "TX", "addressCountry": "US" },
     "alumniOf": [
       { "@type": "CollegeOrUniversity", "name": "University of Texas at Austin", "department": "Post Graduate Program, Generative AI for Business Applications" },
       { "@type": "CollegeOrUniversity", "name": "University of South Florida" }
     ],
     "knowsAbout": ["Operations Management", "AI Adoption", "Program Management", "Generative AI", "Vendor Management", "Process Improvement", "Change Management", "Lean Manufacturing"],
-    "sameAs": [
-      "https://linkedin.com/in/thomasdenny1/",
-      "https://github.com/thodenny",
-      "https://sharedintelligence.co"
-    ],
+    "sameAs": ["https://linkedin.com/in/thomasdenny1/", "https://github.com/thodenny", "https://sharedintelligence.co"],
     "description": "Program Manager at Meta. Ten years scaling teams at Amazon, Tesla, and Meta. Building AI-native workflows."
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { cream: '#F5F0E8', rust: '#B94A2C', mustard: '#D4A017', navy: '#1B2A4A', parchment: '#E8DFC8', charcoal: '#2E2E2E' },
-          fontFamily: { display: ['"Playfair Display"', 'Georgia', 'serif'], body: ['Lora', 'Georgia', 'serif'], mono: ['"Courier Prime"', 'Courier New', 'monospace'] },
-        },
-      },
-    }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body class="font-body text-charcoal min-h-screen">
+<body>
 
-  <!-- NAV -->
-  <nav class="bg-navy sticky top-0 z-50 border-b-4 border-mustard">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
-      <a href="/" class="font-display font-black text-cream text-xl tracking-tight leading-none shrink-0 no-underline">
-        THOMAS<br /><span class="text-mustard">DENNY</span>
+  <!-- Custom cursor -->
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Masthead / Nav -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="/" class="brand" aria-label="Thomas Denny — home">
+        <span class="brand-monogram">Thomas Denny</span>
       </a>
-      <div class="flex flex-wrap gap-0 items-center">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#built" class="nav-link">Built</a>
-        <a href="#now" class="nav-link">Now</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="/Thomas_Denny_Resume.pdf" class="nav-link" download>Resume</a>
-        <a href="https://sharedintelligence.co" class="nav-link" target="_blank" rel="noopener">Shared Intelligence</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work"    class="nav-link" data-num="01">Work</a>
+        <a href="#built"   class="nav-link" data-num="02">Built</a>
+        <a href="#now"     class="nav-link" data-num="03">Now</a>
+        <a href="#contact" class="nav-link" data-num="04">Contact</a>
+        <a href="/Thomas_Denny_Resume.pdf" class="nav-link" data-num="05" download>Résumé</a>
+        <a href="https://sharedintelligence.co" class="nav-link" data-num="06" target="_blank" rel="noopener">Shared Intelligence</a>
+      </nav>
+      <div class="nav-meta">
+        <span><strong>Austin, TX</strong></span>
+        <span>30.27° N · 97.74° W</span>
       </div>
     </div>
-  </nav>
+  </header>
 
   <!-- HERO -->
-  <section id="top" class="max-w-5xl mx-auto px-4 py-16 md:py-24">
-    <div class="flex items-center justify-center gap-4 mb-8">
-      <div class="h-px bg-navy flex-1 max-w-16"></div>
-      <span class="font-mono text-rust text-xs tracking-widest uppercase">Austin, Texas</span>
-      <div class="h-px bg-navy flex-1 max-w-16"></div>
-    </div>
+  <section id="top" class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Operations &amp; AI · Austin, Texas</div>
 
-    <div class="grid md:grid-cols-5 gap-10 md:gap-12 items-center">
-      <!-- Photo -->
-      <div class="md:col-span-2 flex justify-center md:justify-end">
-        <div class="bg-parchment retro-border p-2 max-w-xs w-full">
-          <img src="/headshot.jpg" alt="Thomas Denny" class="w-full block" />
-          <p class="font-mono text-xs text-rust uppercase tracking-widest text-center mt-2 mb-1">Thomas Denny · 2026</p>
+        <h1 class="headline">
+          Thomas<br />
+          <span class="ital">Denny.</span>
+        </h1>
+
+        <p class="hero-deck">
+          An operator who taught himself to build with AI. Ten years scaling teams at <strong>Amazon</strong>, launching a facility at <strong>Tesla's Gigafactory</strong>, building AI-native workflows at <strong>Meta</strong>, and writing free AI resources at <strong>Shared Intelligence</strong>. <em>Reach out to connect!</em>
+        </p>
+
+        <dl class="hero-meta">
+          <div><dt>Currently</dt><dd>Meta · PgM</dd></div>
+          <div><dt>Tenure</dt><dd>Ten Years</dd></div>
+          <div><dt>Practice</dt><dd>Operations &amp; AI</dd></div>
+          <div><dt>Studio</dt><dd>Austin, TX</dd></div>
+        </dl>
+
+        <div class="hero-actions">
+          <a href="/Thomas_Denny_Resume.pdf" class="btn btn--filled" download>
+            <span>Download Résumé</span><span class="caret">↓</span>
+          </a>
+          <a href="#work" class="btn">
+            <span>Read the Work</span><span class="caret">→</span>
+          </a>
         </div>
       </div>
 
-      <!-- Hero text -->
-      <div class="md:col-span-3 text-center md:text-left">
-        <h1 class="font-display font-black text-navy leading-none mb-4" style="font-size: clamp(2.75rem, 7vw, 5rem); letter-spacing: -0.02em;">
-          Thomas<br /><span class="text-mustard italic">Denny</span>
-        </h1>
-
-        <div class="retro-divider-double max-w-xs mx-auto md:mx-0 my-6"></div>
-
-        <p class="font-display font-bold text-navy text-lg md:text-xl mb-4 tracking-wide uppercase" style="letter-spacing: 0.08em;">
-          Operations &amp; AI · Program Manager at Meta
-        </p>
-
-        <p class="font-body text-charcoal text-lg md:text-xl leading-relaxed mb-6">
-          An operator who taught himself to build with AI. Ten years scaling teams at <strong class="text-navy">Amazon</strong>, launching a facility at <strong class="text-navy">Tesla's Gigafactory</strong>, building AI-native workflows at <strong class="text-navy">Meta</strong>, and creating free AI resources at <strong class="text-navy">Shared Intelligence</strong>.
-        </p>
-
-        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-          <a href="/Thomas_Denny_Resume.pdf" class="cta-btn-primary" download>Download resume (PDF)</a>
-          <a href="/work" class="cta-btn-secondary">See the work</a>
-        </div>
+      <div>
+        <figure class="plate">
+          <img src="/headshot.jpg" alt="Thomas Denny" />
+          <figcaption class="plate-caption">
+            <span>Thomas Denny · 2026</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <hr class="retro-divider max-w-3xl mx-auto" />
+  <hr class="rule-x" />
 
   <!-- WORK -->
-  <section id="work" class="max-w-5xl mx-auto px-4 py-16">
-    <div class="text-center mb-12">
-      <p class="font-mono text-rust text-xs tracking-widest uppercase mb-3">Selected Work</p>
-      <h2 class="font-display font-black text-navy mb-4" style="font-size: clamp(2.25rem, 5vw, 3.5rem);">Where I've worked</h2>
-      <div class="retro-divider-double max-w-xs mx-auto"></div>
-    </div>
+  <section id="work" class="section">
+    <header class="section-head">
+      <h2 class="section-title"><em>Work</em></h2>
+    </header>
 
-    <div class="grid gap-8">
+    <div class="work-stack">
 
       <!-- Meta -->
-      <article class="fade-in bg-parchment retro-border p-6 md:p-8">
-        <header class="flex flex-wrap items-baseline justify-between gap-2 mb-4">
-          <h3 class="font-display font-black text-navy text-2xl md:text-3xl">Meta</h3>
-          <span class="font-mono text-xs text-rust uppercase tracking-widest">Jan 2023 – Present · Austin, TX</span>
+      <article class="work reveal" data-stagger="1">
+        <header class="work-head">
+          <h3 class="work-name">Meta<em>.</em></h3>
+          <div class="work-period">Jan 2023 — Present<br />Austin, Texas</div>
         </header>
-        <p class="font-display font-bold text-navy text-lg mb-3">Program Manager, Global Operations</p>
-        <p class="text-charcoal leading-relaxed mb-5">Building AI-native workflows and managing vendor launch operations across Meta's Family of Apps.</p>
-        <ul class="space-y-2 text-charcoal leading-relaxed list-none">
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Led the team that won <strong class="text-navy">Meta's Scaled Ops org-wide AI hackathon</strong> by automating a 20-minute task we ran hundreds of times a year. The end-to-end workflow pulls data, creates a Google Drive folder with pre-filled docs, sends a Google Chat notification, and schedules the meeting. Projected to save <strong class="text-navy">over 150 hours annually</strong>.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Cut average vendor launch cycle time from <strong class="text-navy">36.3 days to 10</strong> across <strong class="text-navy">174 launches at 100% compliance</strong>, by introducing weekly metric audits, real-time gap communications, and a standardized work checklist.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Drove AI tool adoption from <strong class="text-navy">17% to 82% in six months</strong> by writing the AI Adoption Playbook, running a team-wide hackathon, and shipping weekly training demos. Daily active users grew from 6 to 43.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Mapped 91 change-management process steps in a Jobs-to-Be-Done AI exercise. Identified <strong class="text-navy">7 automation opportunities projecting 343 FTE hours saved per year</strong>.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Scoped a full managed service provider rollout, ran the business analysis, and <strong class="text-navy">recommended against it</strong>. Leadership adopted the recommendation.</span></li>
+        <p class="work-role">Program Manager, Global Operations</p>
+        <p class="work-summary">Building AI-native workflows and managing vendor launch operations across Meta's Family of Apps.</p>
+        <ul class="bullets">
+          <li><span class="num">01</span><span>Led the team that won <strong>Meta's Scaled Ops org-wide AI hackathon</strong> by automating a 20-minute task we ran hundreds of times a year. The end-to-end workflow pulls data, creates a Drive folder with pre-filled docs, sends a Chat notification, and schedules the meeting. Projected to save <strong>over 150 hours annually</strong>.</span></li>
+          <li><span class="num">02</span><span>Cut average vendor launch cycle time from <strong>36.3 days to 10</strong> across <strong>174 launches at 100% compliance</strong>, by introducing weekly metric audits, real-time gap communications, and a standardized work checklist.</span></li>
+          <li><span class="num">03</span><span>Drove AI tool adoption from <strong>17% to 82% in six months</strong> by writing the AI Adoption Playbook, running a team-wide hackathon, and shipping weekly training demos. Daily active users grew from 6 to 43.</span></li>
+          <li><span class="num">04</span><span>Mapped 91 change-management process steps in a Jobs-to-Be-Done AI exercise. Identified <strong>7 automation opportunities projecting 343 FTE hours saved per year</strong>.</span></li>
+          <li><span class="num">05</span><span>Scoped a full managed service provider rollout, ran the business analysis, and <strong>recommended against it</strong>. Leadership adopted the recommendation.</span></li>
         </ul>
       </article>
 
       <!-- Tesla -->
-      <article class="fade-in bg-parchment retro-border p-6 md:p-8">
-        <header class="flex flex-wrap items-baseline justify-between gap-2 mb-4">
-          <h3 class="font-display font-black text-navy text-2xl md:text-3xl">Tesla</h3>
-          <span class="font-mono text-xs text-rust uppercase tracking-widest">Mar 2022 – Dec 2022 · Austin, TX</span>
+      <article class="work reveal" data-stagger="2">
+        <header class="work-head">
+          <h3 class="work-name">Tesla<em>.</em></h3>
+          <div class="work-period">Mar 2022 — Dec 2022<br />Austin, Texas</div>
         </header>
-        <p class="font-display font-bold text-navy text-lg mb-3">Manager, Production Control — Model Y</p>
-        <p class="text-charcoal leading-relaxed mb-5">Hired specifically as Production Control launch lead for Gigafactory Texas. A 10-month scope: greenfield to a self-sufficient 800-person org.</p>
-        <ul class="space-y-2 text-charcoal leading-relaxed list-none">
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Launched Tesla's <strong class="text-navy">10M+ sq ft Gigafactory Texas</strong> as Production Control lead, owning material receiving, storage, and point-of-use supply.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Scaled the org from <strong class="text-navy">4 managers / 80 associates to 16 managers / 800+ associates in 7 months</strong> through structured labor planning and a daily cross-functional cadence.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Cut material-related production downtime from <strong class="text-navy">3,000+ hours/week to under 1,000 in 6 weeks</strong> by driving fixes across Material Planning, Logistics, Engineering, and IT.</span></li>
+        <p class="work-role">Manager, Production Control — Model Y</p>
+        <p class="work-summary">Hired specifically as Production Control launch lead for Gigafactory Texas. A ten-month scope: greenfield to a self-sufficient 800-person org.</p>
+        <ul class="bullets">
+          <li><span class="num">01</span><span>Launched Tesla's <strong>10M+ sq ft Gigafactory Texas</strong> as Production Control lead, owning material receiving, storage, and point-of-use supply.</span></li>
+          <li><span class="num">02</span><span>Scaled the org from <strong>4 managers / 80 associates to 16 managers / 800+ associates in 7 months</strong> through structured labor planning and a daily cross-functional cadence.</span></li>
+          <li><span class="num">03</span><span>Cut material-related production downtime from <strong>3,000+ hours/week to under 1,000 in 6 weeks</strong> by driving fixes across Material Planning, Logistics, Engineering, and IT.</span></li>
         </ul>
       </article>
 
       <!-- Amazon -->
-      <article class="fade-in bg-parchment retro-border p-6 md:p-8">
-        <header class="flex flex-wrap items-baseline justify-between gap-2 mb-4">
-          <h3 class="font-display font-black text-navy text-2xl md:text-3xl">Amazon</h3>
-          <span class="font-mono text-xs text-rust uppercase tracking-widest">Feb 2016 – Feb 2022 · NC · FL · AZ</span>
+      <article class="work reveal" data-stagger="3">
+        <header class="work-head">
+          <h3 class="work-name">Amazon<em>.</em></h3>
+          <div class="work-period">Feb 2016 — Feb 2022<br />NC · FL · AZ</div>
         </header>
-        <p class="font-display font-bold text-navy text-lg mb-3">Senior Operations Manager (L7) — and four roles before it</p>
-        <p class="text-charcoal leading-relaxed mb-5">Six years launching and operating some of Amazon's largest robotics fulfillment centers.</p>
-        <ul class="space-y-2 text-charcoal leading-relaxed list-none">
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Launched <strong class="text-navy">RDU1, a 640k sq ft Amazon Robotics fulfillment center</strong>, overseeing 6 Operations Managers, 16+ Area Managers, and 1,500+ associates.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Ranked <strong class="text-navy">2nd in planning accuracy across 50+ fulfillment centers</strong> during Peak 2021. Delivered 105% of plan against a 99.1% regional average; broke RDU1's single-week record at <strong class="text-navy">5,061,759 units</strong>.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Cut site-wide gross adjustment defect rate from <strong class="text-navy">72,000 to 44,000 DPMO</strong> by running a daily cross-functional war room with Inbound and Outbound.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Designed a mechanical giftwrap solution for Peak 2019: <strong class="text-navy">89,900 orders fulfilled, zero safety incidents</strong>, adopted by sister sites.</span></li>
-          <li class="flex gap-3"><span class="text-rust font-bold mt-1">›</span><span>Promoted L4 to L7 across Inbound, ICQA, Process Engineering, and Operations roles. Developed 2 direct reports to L7 — <strong class="text-navy">30% department promotion rate</strong>.</span></li>
+        <p class="work-role">Senior Operations Manager (L7) — and four roles before it</p>
+        <p class="work-summary">Six years launching and operating some of Amazon's largest robotics fulfillment centers.</p>
+        <ul class="bullets">
+          <li><span class="num">01</span><span>Launched <strong>RDU1, a 640k sq ft Amazon Robotics fulfillment center</strong>, overseeing 6 Operations Managers, 16+ Area Managers, and 1,500+ associates.</span></li>
+          <li><span class="num">02</span><span>Ranked <strong>2nd in planning accuracy across 50+ fulfillment centers</strong> during Peak 2021. Delivered 105% of plan against a 99.1% regional average; broke RDU1's single-week record at <strong>5,061,759 units</strong>.</span></li>
+          <li><span class="num">03</span><span>Cut site-wide gross adjustment defect rate from <strong>72,000 to 44,000 DPMO</strong> by running a daily cross-functional war room with Inbound and Outbound.</span></li>
+          <li><span class="num">04</span><span>Designed a mechanical giftwrap solution for Peak 2019: <strong>89,900 orders fulfilled, zero safety incidents</strong>, adopted by sister sites.</span></li>
+          <li><span class="num">05</span><span>Promoted L4 to L7 across Inbound, ICQA, Process Engineering, and Operations roles. Developed 2 direct reports to L7 — <strong>30% department promotion rate</strong>.</span></li>
         </ul>
       </article>
 
     </div>
   </section>
 
-  <hr class="retro-divider max-w-3xl mx-auto" />
+  <hr class="rule-x" />
 
   <!-- BUILT -->
-  <section id="built" class="max-w-5xl mx-auto px-4 py-16">
-    <div class="text-center mb-12">
-      <p class="font-mono text-rust text-xs tracking-widest uppercase mb-3">Things I've Built</p>
-      <h2 class="font-display font-black text-navy mb-4" style="font-size: clamp(2.25rem, 5vw, 3.5rem);">Built</h2>
-      <div class="retro-divider-double max-w-xs mx-auto"></div>
+  <section id="built" class="section">
+    <header class="section-head">
+      <h2 class="section-title"><em>Built</em></h2>
+    </header>
+
+    <p class="collection-label">Personal Projects</p>
+    <div class="cards">
+      <a href="https://sharedintelligence.co" target="_blank" rel="noopener" class="card reveal" data-stagger="1">
+        <div class="card-num">№ 01 — Resource Hub</div>
+        <h3 class="card-name">Shared <em>Intelligence</em></h3>
+        <p class="card-desc">A free AI resource hub for everyday professionals. Crash course, prompt library, deep-dive articles, glossary, and field guides.</p>
+        <div class="card-foot">
+          <span class="card-tag">HTML · GitHub Pages</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a href="https://resumeiq-gamma.vercel.app" target="_blank" rel="noopener" class="card reveal" data-stagger="2">
+        <div class="card-num">№ 02 — Web App</div>
+        <h3 class="card-name">Resume<em>IQ</em></h3>
+        <p class="card-desc">Paste a job description, get a tailored resume back. Rewrites bullets, updates summary and skills, flags ATS issues, drafts cover letters.</p>
+        <div class="card-foot">
+          <span class="card-tag">Claude API · Vercel</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a href="https://thodenny.github.io/personal-website/guitar-roadmap.html" target="_blank" rel="noopener" class="card reveal" data-stagger="3">
+        <div class="card-num">№ 03 — Practice Tool</div>
+        <h3 class="card-name">Your Guitar <em>Roadmap</em></h3>
+        <p class="card-desc">A complete guitar learning environment: 44-skill tracker, practice timer, metronome, 37 chord diagrams, 9 scales across 12 keys.</p>
+        <div class="card-foot">
+          <span class="card-tag">Web Audio API</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
     </div>
 
-    <p class="font-mono text-xs text-rust uppercase tracking-widest text-center mb-6">Personal Projects</p>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-
-      <a href="https://sharedintelligence.co" target="_blank" rel="noopener" class="project-card bg-parchment retro-border p-5 flex flex-col">
-        <h3 class="font-display font-bold text-navy text-xl mb-2">Shared Intelligence</h3>
-        <p class="text-sm text-charcoal leading-relaxed mb-4 flex-1">A free AI resource hub for everyday professionals. Crash course, prompt library, deep-dive articles, glossary, and field guides.</p>
-        <p class="font-mono text-xs text-rust uppercase tracking-widest">HTML · GitHub Pages</p>
+    <p class="collection-label">Course Projects · UT Austin GenAI</p>
+    <div class="cards">
+      <a href="https://thodenny.github.io/personal-website/Thomas_Denny_Project_1.pdf" target="_blank" rel="noopener" class="card is-accent reveal" data-stagger="1">
+        <div class="card-num">№ 04 — NLP</div>
+        <h3 class="card-name">Stock Sentiment <em>Analysis</em></h3>
+        <p class="card-desc">Automated sentiment classifier replacing manual NASDAQ monitoring. <strong>77.8% accuracy, +9% F1 over Word2Vec.</strong></p>
+        <div class="card-foot">
+          <span class="card-tag">Sentence Transformers · Feb 2026</span>
+          <span class="card-arrow">↗</span>
+        </div>
       </a>
 
-      <a href="https://resumeiq-gamma.vercel.app" target="_blank" rel="noopener" class="project-card bg-parchment retro-border p-5 flex flex-col">
-        <h3 class="font-display font-bold text-navy text-xl mb-2">ResumeIQ</h3>
-        <p class="text-sm text-charcoal leading-relaxed mb-4 flex-1">Paste a job description, get a tailored resume back. Rewrites bullets, updates summary and skills, flags ATS issues, drafts cover letters.</p>
-        <p class="font-mono text-xs text-rust uppercase tracking-widest">Claude API · Vercel</p>
+      <a href="https://thodenny.github.io/personal-website/Thomas_Denny_Project_2_Medical_Assistant.pdf" target="_blank" rel="noopener" class="card is-accent reveal" data-stagger="2">
+        <div class="card-num">№ 05 — RAG</div>
+        <h3 class="card-name">Medical <em>Assistant</em></h3>
+        <p class="card-desc">RAG system on GPT-4o that ingests a full medical manual into a vector database and returns grounded, source-cited answers. Benchmarked three approaches with LLM-as-a-Judge.</p>
+        <div class="card-foot">
+          <span class="card-tag">RAG · GPT-4o · Mar 2026</span>
+          <span class="card-arrow">↗</span>
+        </div>
       </a>
 
-      <a href="https://thodenny.github.io/personal-website/guitar-roadmap.html" target="_blank" rel="noopener" class="project-card bg-parchment retro-border p-5 flex flex-col">
-        <h3 class="font-display font-bold text-navy text-xl mb-2">Your Guitar Roadmap</h3>
-        <p class="text-sm text-charcoal leading-relaxed mb-4 flex-1">A complete guitar learning environment: 44-skill tracker, practice timer, metronome, 37 chord diagrams, 9 scales across 12 keys.</p>
-        <p class="font-mono text-xs text-rust uppercase tracking-widest">Web Audio API</p>
-      </a>
-
-    </div>
-
-    <p class="font-mono text-xs text-rust uppercase tracking-widest text-center mb-6">Course Projects · UT Austin GenAI</p>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <a href="https://thodenny.github.io/personal-website/Thomas_Denny_Project_1.pdf" target="_blank" rel="noopener" class="project-card bg-parchment retro-border-mustard p-5 flex flex-col">
-        <h3 class="font-display font-bold text-navy text-xl mb-2">Stock Sentiment Analysis</h3>
-        <p class="text-sm text-charcoal leading-relaxed mb-2 flex-1">Automated sentiment classifier replacing manual NASDAQ monitoring. <strong class="text-navy">77.8% accuracy, +9% F1 over Word2Vec</strong>.</p>
-        <p class="font-mono text-xs text-rust uppercase tracking-widest">Sentence Transformers · NLP · Feb 2026</p>
-      </a>
-
-      <a href="https://thodenny.github.io/personal-website/Thomas_Denny_Project_2_Medical_Assistant.pdf" target="_blank" rel="noopener" class="project-card bg-parchment retro-border-mustard p-5 flex flex-col">
-        <h3 class="font-display font-bold text-navy text-xl mb-2">Medical Assistant (RAG)</h3>
-        <p class="text-sm text-charcoal leading-relaxed mb-2 flex-1">RAG system on GPT-4o that ingests a full medical manual into a vector database and returns grounded, source-cited answers. Benchmarked three approaches with LLM-as-a-Judge.</p>
-        <p class="font-mono text-xs text-rust uppercase tracking-widest">RAG · GPT-4o · Vector DB · Mar 2026</p>
-      </a>
-
-      <div class="project-card-static bg-parchment retro-border-mustard p-5 flex flex-col opacity-90">
-        <h3 class="font-display font-bold text-navy text-xl mb-2">FoodHub Chatbot</h3>
-        <p class="text-sm text-charcoal leading-relaxed mb-2 flex-1">GenAI chatbot for a food aggregator. LLM-driven SQL agent queries structured databases for real-time order status, payments, and delivery tracking.</p>
-        <p class="font-mono text-xs text-rust uppercase tracking-widest">LLM · SQL · Agents · In progress</p>
+      <div class="card is-accent is-static reveal" data-stagger="3">
+        <div class="card-num">№ 06 — In Progress</div>
+        <h3 class="card-name">FoodHub <em>Chatbot</em></h3>
+        <p class="card-desc">GenAI chatbot for a food aggregator. LLM-driven SQL agent queries structured databases for real-time order status, payments, and delivery tracking.</p>
+        <div class="card-foot">
+          <span class="card-tag">LLM · SQL · Agents</span>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <hr class="retro-divider max-w-3xl mx-auto" />
+  <hr class="rule-x" />
 
   <!-- NOW -->
-  <section id="now" class="max-w-3xl mx-auto px-4 py-16">
-    <div class="text-center mb-10">
-      <p class="font-mono text-rust text-xs tracking-widest uppercase mb-3">What I'm Doing Now</p>
-      <h2 class="font-display font-black text-navy mb-4" style="font-size: clamp(2.25rem, 5vw, 3.5rem);">Now</h2>
-      <div class="retro-divider-double max-w-xs mx-auto"></div>
-    </div>
+  <section id="now" class="section">
+    <header class="section-head">
+      <h2 class="section-title"><em>Now</em></h2>
+    </header>
 
-    <div class="bg-parchment retro-border-mustard p-6 md:p-8 leading-relaxed space-y-5">
-      <p class="text-lg">Program Manager at Meta on the operational side of AI infrastructure: vendor launches, change management, and the AI-native workflows.</p>
-      <p>Finishing a Post Graduate Program in Generative AI for Business Applications at UT Austin, wrapping May 2026.</p>
-      <p>Also building <a href="https://sharedintelligence.co" target="_blank" rel="noopener" class="text-rust font-semibold underline decoration-mustard decoration-2 underline-offset-4">Shared Intelligence</a>: the public version of the AI educational work I do internally at Meta. Free, plain English, no paywall, no tracking.</p>
-      <p>Outside of work, I play guitar. Have since I was 16.</p>
+    <div class="dossier">
+      <div class="dossier-prose reveal" data-stagger="1">
+        <p>Program Manager at Meta on the operational side of AI infrastructure: vendor launches, change management, and the AI-native workflows that follow.</p>
+        <p>Finishing a Post Graduate Program in Generative AI for Business Applications at <strong>UT Austin</strong>, wrapping May 2026.</p>
+        <p>Also building <a href="https://sharedintelligence.co" target="_blank" rel="noopener">Shared Intelligence</a> — the public version of the AI educational work I do internally at Meta. Free, plain English, no paywall, no tracking.</p>
+        <p>Outside of work, I play guitar. Have since I was sixteen.</p>
+      </div>
 
-      <hr class="retro-divider" style="margin: 1.5rem 0;" />
-
-      <p class="font-mono text-xs text-rust uppercase tracking-widest text-center mb-2">Credentials</p>
-      <p class="text-sm text-center text-charcoal">
-        Post Graduate Program, Generative AI · UT Austin · May 2026<br />
-        Six Sigma Green Belt · USF · 2019<br />
-        B.S. Business Management · University of South Florida · 2015
-      </p>
+      <aside class="dossier-aside reveal" data-stagger="2">
+        <p class="aside-label">Credentials &amp; Etc.</p>
+        <ul class="facts">
+          <li><span><strong>Post Graduate Program</strong>, Generative AI<br /><em>UT Austin</em></span><span class="when">May 2026</span></li>
+          <li><span><strong>Six Sigma</strong> Green Belt<br /><em>University of South Florida</em></span><span class="when">2019</span></li>
+          <li><span><strong>B.S. Business Management</strong><br /><em>University of South Florida</em></span><span class="when">2015</span></li>
+          <li><span><strong>Currently in Austin</strong><br /><em>Open to roles &amp; advisory</em></span><span class="when">Now</span></li>
+        </ul>
+      </aside>
     </div>
   </section>
 
-  <hr class="retro-divider max-w-3xl mx-auto" />
+  <hr class="rule-x" />
 
   <!-- CONTACT -->
-  <section id="contact" class="max-w-2xl mx-auto px-4 py-16">
-    <div class="text-center mb-10">
-      <p class="font-mono text-rust text-xs tracking-widest uppercase mb-3">Get in Touch</p>
-      <h2 class="font-display font-black text-navy mb-4" style="font-size: clamp(2.25rem, 5vw, 3.5rem);">Let's talk</h2>
-      <div class="retro-divider-double max-w-xs mx-auto"></div>
-    </div>
+  <section id="contact" class="section">
+    <header class="section-head">
+      <h2 class="section-title"><em>Contact</em></h2>
+    </header>
 
-    <div class="bg-parchment retro-border p-6 md:p-8 text-center leading-relaxed">
-      <p class="text-charcoal mb-6">Open to new roles, advisory work, or to trade notes.</p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/Thomas_Denny_Resume.pdf" class="cta-btn-primary" download>Resume (PDF)</a>
-        <a href="mailto:93.thomasdenny@gmail.com" class="cta-btn-secondary">Email</a>
-        <a href="https://linkedin.com/in/thomasdenny1/" target="_blank" rel="noopener" class="cta-btn-secondary">LinkedIn</a>
+    <div class="contact-block reveal">
+      <p class="contact-quote">Open to new roles, advisory work, or to <em>trade notes</em>.</p>
+      <div class="contact-actions">
+        <a href="mailto:93.thomasdenny@gmail.com" class="btn btn--filled">
+          <span>Send a Letter</span><span class="caret">→</span>
+        </a>
+        <a href="/Thomas_Denny_Resume.pdf" class="btn" download>
+          <span>Résumé (PDF)</span><span class="caret">↓</span>
+        </a>
+        <a href="https://linkedin.com/in/thomasdenny1/" target="_blank" rel="noopener" class="btn btn--brass">
+          <span>LinkedIn</span><span class="caret">↗</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-navy border-t-4 border-mustard mt-8">
-    <div class="max-w-5xl mx-auto px-4 py-8 text-center">
-      <p class="font-display font-bold text-cream text-lg mb-1">Thomas <span class="text-mustard">Denny</span></p>
-      <p class="font-mono text-xs text-cream/50 uppercase tracking-widest">Operations &amp; AI · Austin, Texas</p>
+  <!-- FOOTER / COLOPHON -->
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <p class="colophon-mark">Thomas <em>Denny</em></p>
+      <dl class="colophon-grid">
+        <div>
+          <dt>Practice</dt>
+          <dd>Operations<br />&amp; Applied AI</dd>
+        </div>
+        <div>
+          <dt>Based</dt>
+          <dd>Austin, Texas<br />2026</dd>
+        </div>
+        <div>
+          <dt>Index</dt>
+          <dd>
+            <a href="#work">i. Work</a><br />
+            <a href="#built">ii. Built</a><br />
+            <a href="#now">iii. Now</a><br />
+            <a href="#contact">iv. Contact</a>
+          </dd>
+        </div>
+        <div>
+          <dt>Elsewhere</dt>
+          <dd>
+            <a href="https://linkedin.com/in/thomasdenny1/" target="_blank" rel="noopener">LinkedIn</a><br />
+            <a href="https://github.com/thodenny" target="_blank" rel="noopener">GitHub</a><br />
+            <a href="https://sharedintelligence.co" target="_blank" rel="noopener">Shared Intelligence</a>
+          </dd>
+        </div>
+      </dl>
+      <div class="colophon-foot">
+        <span>Set in Fraunces &amp; Newsreader</span>
+        <span>© Thomas Denny · 2026</span>
+      </div>
     </div>
   </footer>
 
@@ -313,19 +354,15 @@
   <script>
     (function () {
       var sectionIds = ['work', 'built', 'now', 'contact'];
-
       function pathToId(pathname) {
         var slug = pathname.replace(/^\/+|\/+$/g, '');
         return sectionIds.indexOf(slug) !== -1 ? slug : null;
       }
-
       function scrollToId(id, smooth) {
         var el = document.getElementById(id);
         if (!el) return;
         el.scrollIntoView(smooth ? { behavior: 'smooth' } : undefined);
       }
-
-      // Restore path captured by 404.html
       var redirect = sessionStorage.getItem('redirect');
       if (redirect && redirect !== location.pathname) {
         sessionStorage.removeItem('redirect');
@@ -333,12 +370,10 @@
       } else if (redirect) {
         sessionStorage.removeItem('redirect');
       }
-
       document.addEventListener('DOMContentLoaded', function () {
         var id = pathToId(location.pathname);
         if (id) scrollToId(id, false);
       });
-
       document.addEventListener('click', function (e) {
         if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         var a = e.target.closest && e.target.closest('a');
@@ -347,18 +382,13 @@
         if (!href) return;
         if (a.target && a.target !== '' && a.target !== '_self') return;
         if (a.hasAttribute('download')) return;
-
         if (href === '/' || (href.charAt(0) === '/' && sectionIds.indexOf(href.slice(1)) !== -1)) {
           e.preventDefault();
           if (location.pathname !== href) history.pushState(null, '', href);
-          if (href === '/') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          } else {
-            scrollToId(href.slice(1), true);
-          }
+          if (href === '/') window.scrollTo({ top: 0, behavior: 'smooth' });
+          else scrollToId(href.slice(1), true);
         }
       });
-
       window.addEventListener('popstate', function () {
         var id = pathToId(location.pathname);
         if (id) scrollToId(id, false);
@@ -366,6 +396,5 @@
       });
     })();
   </script>
-
 </body>
 </html>
