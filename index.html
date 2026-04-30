@@ -78,8 +78,29 @@
         <span><strong>Austin, TX</strong></span>
         <span>30.27° N · 97.74° W</span>
       </div>
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+    <nav class="nav-overlay-links" aria-label="Primary mobile">
+      <a href="#work"    class="nav-overlay-link" data-num="01"><span class="nav-overlay-num">01</span><span class="nav-overlay-label">Work</span></a>
+      <a href="#built"   class="nav-overlay-link" data-num="02"><span class="nav-overlay-num">02</span><span class="nav-overlay-label">Built</span></a>
+      <a href="#now"     class="nav-overlay-link" data-num="03"><span class="nav-overlay-num">03</span><span class="nav-overlay-label">Now</span></a>
+      <a href="#contact" class="nav-overlay-link" data-num="04"><span class="nav-overlay-num">04</span><span class="nav-overlay-label">Contact</span></a>
+      <a href="/Thomas_Denny_Resume.pdf" class="nav-overlay-link" data-num="05" download><span class="nav-overlay-num">05</span><span class="nav-overlay-label">Résumé</span></a>
+      <a href="https://sharedintelligence.co" class="nav-overlay-link" data-num="06" target="_blank" rel="noopener"><span class="nav-overlay-num">06</span><span class="nav-overlay-label">Shared Intelligence</span></a>
+    </nav>
+    <div class="nav-overlay-meta">
+      <span><strong>Austin, TX</strong></span>
+      <span>30.27° N · 97.74° W</span>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section id="top" class="hero">

@@ -1027,8 +1027,139 @@ body {
   .nav-meta { display: none; }
   .masthead-inner { grid-template-columns: auto 1fr; }
 }
-@media (max-width: 600px) {
-  .nav-link { padding: 6px 9px; font-size: 10px; letter-spacing: 0.18em; }
+
+/* --- Mobile hamburger ------------------------------------------------- */
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  justify-self: end;
+  transition: border-color 0.25s var(--ease-out);
+}
+.nav-toggle:hover { border-color: var(--ink); }
+.nav-toggle-bar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+  background: var(--ink);
+  transform-origin: center;
+  transition: transform 0.35s var(--ease-out), opacity 0.2s var(--ease-out);
+}
+.nav-toggle-bar:nth-child(1) { transform: translate(-50%, -4px); }
+.nav-toggle-bar:nth-child(2) { transform: translate(-50%,  4px); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translate(-50%, 0) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+/* --- Mobile overlay --------------------------------------------------- */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--bone);
+  background-image:
+    radial-gradient(900px 600px at 80% -10%, rgba(184, 144, 85, 0.14), transparent 60%),
+    radial-gradient(700px 500px at -10% 100%, rgba(90, 30, 46, 0.08), transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 96px 32px 48px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-out);
+}
+.nav-overlay[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-overlay-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 18px 0;
+}
+.nav-overlay-link {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 4px;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(188, 178, 160, 0.4);
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 0.45s var(--ease-out), opacity 0.45s var(--ease-out), color 0.25s var(--ease-out);
+}
+.nav-overlay-link:last-child { border-bottom: 0; }
+.nav-overlay[data-open="true"] .nav-overlay-link {
+  transform: translateY(0);
+  opacity: 1;
+}
+.nav-overlay[data-open="true"] .nav-overlay-link:nth-child(1) { transition-delay: 0.06s; }
+.nav-overlay[data-open="true"] .nav-overlay-link:nth-child(2) { transition-delay: 0.10s; }
+.nav-overlay[data-open="true"] .nav-overlay-link:nth-child(3) { transition-delay: 0.14s; }
+.nav-overlay[data-open="true"] .nav-overlay-link:nth-child(4) { transition-delay: 0.18s; }
+.nav-overlay[data-open="true"] .nav-overlay-link:nth-child(5) { transition-delay: 0.22s; }
+.nav-overlay[data-open="true"] .nav-overlay-link:nth-child(6) { transition-delay: 0.26s; }
+.nav-overlay-link:hover { color: var(--brass); }
+.nav-overlay-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--brass);
+  text-transform: uppercase;
+}
+.nav-overlay-label {
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: clamp(28px, 7vw, 38px);
+  letter-spacing: -0.015em;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  line-height: 1.1;
+}
+.nav-overlay-meta {
+  margin-top: 32px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav-overlay-meta strong { color: var(--ink); font-weight: 500; }
+
+body.nav-open { overflow: hidden; }
+
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .masthead-inner { grid-template-columns: 1fr auto; padding: 14px 22px; }
+}
+@media (min-width: 701px) {
+  .nav-overlay { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-overlay,
+  .nav-overlay-link,
+  .nav-toggle-bar { transition: none; }
 }
 
 /* Focus styles for keyboard users */

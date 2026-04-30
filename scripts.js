@@ -118,6 +118,47 @@
   sections.forEach(s => { if (linkById[s.id]) obs.observe(s); });
 })();
 
+// Mobile nav (hamburger + overlay)
+(function () {
+  const toggle = document.getElementById('navToggle');
+  const overlay = document.getElementById('navOverlay');
+  if (!toggle || !overlay) return;
+
+  const links = overlay.querySelectorAll('.nav-overlay-link');
+
+  function open() {
+    overlay.hidden = false;
+    requestAnimationFrame(() => overlay.setAttribute('data-open', 'true'));
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+    document.body.classList.add('nav-open');
+  }
+
+  function close() {
+    overlay.removeAttribute('data-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    document.body.classList.remove('nav-open');
+    setTimeout(() => { overlay.hidden = true; }, 300);
+  }
+
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    expanded ? close() : open();
+  });
+
+  links.forEach((a) => a.addEventListener('click', close));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') close();
+  });
+
+  // Auto-close if viewport grows past breakpoint while open
+  window.matchMedia('(min-width: 701px)').addEventListener('change', (e) => {
+    if (e.matches && toggle.getAttribute('aria-expanded') === 'true') close();
+  });
+})();
+
 // Subtle parallax on the hero plate
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
