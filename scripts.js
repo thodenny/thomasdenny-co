@@ -149,6 +149,11 @@
 
   links.forEach((a) => a.addEventListener('click', close));
 
+  // Tap empty area of overlay to dismiss (links handle their own click)
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) close();
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') close();
   });

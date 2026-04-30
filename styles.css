@@ -1039,8 +1039,13 @@ body {
   border-radius: 2px;
   cursor: pointer;
   position: relative;
+  z-index: 100;
   justify-self: end;
   transition: border-color 0.25s var(--ease-out);
+}
+.nav-toggle[aria-expanded="true"] {
+  border-color: var(--ink);
+  background: var(--bone);
 }
 .nav-toggle:hover { border-color: var(--ink); }
 .nav-toggle-bar {
