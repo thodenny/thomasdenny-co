@@ -608,6 +608,10 @@ body {
   color: var(--ink);
   margin: 6px 0 14px;
   font-variation-settings: 'opsz' 14;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
 }
 .work-summary {
   color: var(--ink-2);
@@ -621,6 +625,57 @@ body {
   padding: 0;
   display: grid;
   gap: 18px;
+}
+.work-role-period {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  font-style: normal;
+  flex-shrink: 0;
+}
+.work-role-divider {
+  border: 0;
+  height: 1px;
+  background: var(--hairline);
+  margin: 36px 0;
+}
+.work-ladder {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hairline);
+}
+.work-ladder-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin: 0 0 16px;
+}
+.work-ladder-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+.work-ladder-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+.ladder-period {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  flex-shrink: 0;
 }
 .bullets li {
   display: grid;
