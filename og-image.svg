@@ -42,7 +42,7 @@
   <!-- Tagline in italic serif -->
   <text x="600" y="513" text-anchor="middle"
         font-family="'Bodoni 72', 'Didot', 'Hoefler Text', Georgia, serif"
-        font-size="26" font-style="italic" fill="#ECE6DA" opacity="0.88">Operations &amp; AI · Program Manager at Meta</text>
+        font-size="26" font-style="italic" fill="#ECE6DA" opacity="0.88">Operations &amp; AI · Solutions Architect at Meta</text>
 
   <!-- Bottom rail -->
   <line x1="80" y1="555" x2="1120" y2="555" stroke="#B89055" stroke-width="1" opacity="0.28"/>
